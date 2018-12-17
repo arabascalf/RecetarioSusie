@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		074D314120C1EE319449297D /* Pods_RecetarioSusie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E547AEE77F487779E094CD /* Pods_RecetarioSusie.framework */; };
+		0D252DBC21BDE3C400D41C4E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2A7E4421BB878000744A5E /* libsqlite3.tbd */; };
+		0D62608421BAF2C900B75A84 /* VeryBerryPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D62608321BAF2C800B75A84 /* VeryBerryPro-Regular.otf */; };
+		0D62608621BAF2D900B75A84 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D62608521BAF2D900B75A84 /* CaviarDreams.ttf */; };
+		0D7E900F21C6CADB00FBEBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E900E21C6CADB00FBEBDC /* RootViewController.swift */; };
+		0D7E901121C6CAE800FBEBDC /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E901021C6CAE800FBEBDC /* RecipeViewController.swift */; };
+		0D7E901421C6D27500FBEBDC /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E901321C6D27500FBEBDC /* IngredientsCell.swift */; };
+		0D7E901621C6D88600FBEBDC /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E901521C6D88600FBEBDC /* Recipe.swift */; };
+		0D7E901A21C6DE2D00FBEBDC /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E901921C6DE2D00FBEBDC /* RecipeCell.swift */; };
+		0D7E901C21C6F95A00FBEBDC /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E901B21C6F95A00FBEBDC /* Ingredients.swift */; };
+		0DA0DF9021BAE773004FBCAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0DF8F21BAE773004FBCAD /* AppDelegate.swift */; };
+		0DA0DF9521BAE773004FBCAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0DF9321BAE773004FBCAD /* Main.storyboard */; };
+		0DA0DF9721BAE774004FBCAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0DF9621BAE774004FBCAD /* Assets.xcassets */; };
+		0DA0DF9A21BAE774004FBCAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0DF9821BAE774004FBCAD /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D2A7E4421BB878000744A5E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		0D62608321BAF2C800B75A84 /* VeryBerryPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VeryBerryPro-Regular.otf"; sourceTree = "<group>"; };
+		0D62608521BAF2D900B75A84 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
+		0D7E900E21C6CADB00FBEBDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		0D7E901021C6CAE800FBEBDC /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		0D7E901321C6D27500FBEBDC /* IngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCell.swift; sourceTree = "<group>"; };
+		0D7E901521C6D88600FBEBDC /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		0D7E901921C6DE2D00FBEBDC /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		0D7E901B21C6F95A00FBEBDC /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
+		0DA0DF8C21BAE773004FBCAD /* RecetarioSusie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecetarioSusie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DA0DF8F21BAE773004FBCAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0DA0DF9421BAE773004FBCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0DA0DF9621BAE774004FBCAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0DA0DF9921BAE774004FBCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0DA0DF9B21BAE774004FBCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		287EB735CBBE9B55EB31468D /* Pods-RecetarioSusie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetarioSusie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecetarioSusie/Pods-RecetarioSusie.debug.xcconfig"; sourceTree = "<group>"; };
+		2A436264EC571537B725F16A /* Pods-RecetarioSusie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetarioSusie.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecetarioSusie/Pods-RecetarioSusie.release.xcconfig"; sourceTree = "<group>"; };
+		60E547AEE77F487779E094CD /* Pods_RecetarioSusie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecetarioSusie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0DA0DF8921BAE772004FBCAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D252DBC21BDE3C400D41C4E /* libsqlite3.tbd in Frameworks */,
+				074D314120C1EE319449297D /* Pods_RecetarioSusie.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D62608221BAF2A900B75A84 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0D62608321BAF2C800B75A84 /* VeryBerryPro-Regular.otf */,
+				0D62608521BAF2D900B75A84 /* CaviarDreams.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0D7E901221C6D17700FBEBDC /* Create Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				0D7E901021C6CAE800FBEBDC /* RecipeViewController.swift */,
+				0D7E901321C6D27500FBEBDC /* IngredientsCell.swift */,
+				0D7E901B21C6F95A00FBEBDC /* Ingredients.swift */,
+			);
+			path = "Create Recipe";
+			sourceTree = "<group>";
+		};
+		0D7E901D21C6FAEB00FBEBDC /* Recipes View */ = {
+			isa = PBXGroup;
+			children = (
+				0D7E900E21C6CADB00FBEBDC /* RootViewController.swift */,
+				0D7E901521C6D88600FBEBDC /* Recipe.swift */,
+				0D7E901921C6DE2D00FBEBDC /* RecipeCell.swift */,
+			);
+			path = "Recipes View";
+			sourceTree = "<group>";
+		};
+		0DA0DF8321BAE772004FBCAD = {
+			isa = PBXGroup;
+			children = (
+				0DA0DF8E21BAE773004FBCAD /* RecetarioSusie */,
+				0DA0DF8D21BAE773004FBCAD /* Products */,
+				7638F7C46065E9BAAF1DDE37 /* Pods */,
+				8916F76F05558F1618A861E2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0DA0DF8D21BAE773004FBCAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DA0DF8C21BAE773004FBCAD /* RecetarioSusie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DA0DF8E21BAE773004FBCAD /* RecetarioSusie */ = {
+			isa = PBXGroup;
+			children = (
+				0D7E901D21C6FAEB00FBEBDC /* Recipes View */,
+				0D7E901221C6D17700FBEBDC /* Create Recipe */,
+				0D62608221BAF2A900B75A84 /* Fonts */,
+				0DA0DF8F21BAE773004FBCAD /* AppDelegate.swift */,
+				0DA0DF9321BAE773004FBCAD /* Main.storyboard */,
+				0DA0DF9621BAE774004FBCAD /* Assets.xcassets */,
+				0DA0DF9821BAE774004FBCAD /* LaunchScreen.storyboard */,
+				0DA0DF9B21BAE774004FBCAD /* Info.plist */,
+			);
+			path = RecetarioSusie;
+			sourceTree = "<group>";
+		};
+		7638F7C46065E9BAAF1DDE37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				287EB735CBBE9B55EB31468D /* Pods-RecetarioSusie.debug.xcconfig */,
+				2A436264EC571537B725F16A /* Pods-RecetarioSusie.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8916F76F05558F1618A861E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D2A7E4421BB878000744A5E /* libsqlite3.tbd */,
+				60E547AEE77F487779E094CD /* Pods_RecetarioSusie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0DA0DF8B21BAE772004FBCAD /* RecetarioSusie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DA0DF9E21BAE774004FBCAD /* Build configuration list for PBXNativeTarget "RecetarioSusie" */;
+			buildPhases = (
+				49BBE5334D6B01C509C193E2 /* [CP] Check Pods Manifest.lock */,
+				0DA0DF8821BAE772004FBCAD /* Sources */,
+				0DA0DF8921BAE772004FBCAD /* Frameworks */,
+				0DA0DF8A21BAE772004FBCAD /* Resources */,
+				7B8B6281E67A298B538E6432 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecetarioSusie;
+			productName = RecetarioSusie;
+			productReference = 0DA0DF8C21BAE773004FBCAD /* RecetarioSusie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0DA0DF8421BAE772004FBCAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = mx.itesm;
+				TargetAttributes = {
+					0DA0DF8B21BAE772004FBCAD = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = 0DA0DF8721BAE772004FBCAD /* Build configuration list for PBXProject "RecetarioSusie" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0DA0DF8321BAE772004FBCAD;
+			productRefGroup = 0DA0DF8D21BAE773004FBCAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0DA0DF8B21BAE772004FBCAD /* RecetarioSusie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0DA0DF8A21BAE772004FBCAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DA0DF9A21BAE774004FBCAD /* LaunchScreen.storyboard in Resources */,
+				0D62608421BAF2C900B75A84 /* VeryBerryPro-Regular.otf in Resources */,
+				0DA0DF9721BAE774004FBCAD /* Assets.xcassets in Resources */,
+				0D62608621BAF2D900B75A84 /* CaviarDreams.ttf in Resources */,
+				0DA0DF9521BAE773004FBCAD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		49BBE5334D6B01C509C193E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecetarioSusie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B8B6281E67A298B538E6432 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RecetarioSusie/Pods-RecetarioSusie-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecetarioSusie/Pods-RecetarioSusie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0DA0DF8821BAE772004FBCAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D7E901C21C6F95A00FBEBDC /* Ingredients.swift in Sources */,
+				0D7E901421C6D27500FBEBDC /* IngredientsCell.swift in Sources */,
+				0D7E900F21C6CADB00FBEBDC /* RootViewController.swift in Sources */,
+				0DA0DF9021BAE773004FBCAD /* AppDelegate.swift in Sources */,
+				0D7E901A21C6DE2D00FBEBDC /* RecipeCell.swift in Sources */,
+				0D7E901121C6CAE800FBEBDC /* RecipeViewController.swift in Sources */,
+				0D7E901621C6D88600FBEBDC /* Recipe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0DA0DF9321BAE773004FBCAD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DA0DF9421BAE773004FBCAD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0DA0DF9821BAE774004FBCAD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DA0DF9921BAE774004FBCAD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0DA0DF9C21BAE774004FBCAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0DA0DF9D21BAE774004FBCAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0DA0DF9F21BAE774004FBCAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 287EB735CBBE9B55EB31468D /* Pods-RecetarioSusie.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E4252N8J8;
+				INFOPLIST_FILE = RecetarioSusie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AranzzaAbascal.RecetarioSusie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0DA0DFA021BAE774004FBCAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A436264EC571537B725F16A /* Pods-RecetarioSusie.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E4252N8J8;
+				INFOPLIST_FILE = RecetarioSusie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AranzzaAbascal.RecetarioSusie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0DA0DF8721BAE772004FBCAD /* Build configuration list for PBXProject "RecetarioSusie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DA0DF9C21BAE774004FBCAD /* Debug */,
+				0DA0DF9D21BAE774004FBCAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DA0DF9E21BAE774004FBCAD /* Build configuration list for PBXNativeTarget "RecetarioSusie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DA0DF9F21BAE774004FBCAD /* Debug */,
+				0DA0DFA021BAE774004FBCAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0DA0DF8421BAE772004FBCAD /* Project object */;
+}

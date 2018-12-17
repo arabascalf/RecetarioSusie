@@ -1,0 +1,51 @@
+
+/* Class = "UILabel"; text = "Ingredientes"; ObjectID = "4B2-wH-Wla"; */
+"4B2-wH-Wla.text" = "Ingredientes";
+
+/* Class = "UILabel"; text = "Procedimiento"; ObjectID = "7Jz-ej-5cl"; */
+"7Jz-ej-5cl.text" = "Procedimiento";
+
+/* Class = "UILabel"; text = "hrs."; ObjectID = "9h0-fI-FFi"; */
+"9h0-fI-FFi.text" = "hrs.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Kel-I1-uLb"; */
+"Kel-I1-uLb.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "1:25"; ObjectID = "L9X-Nd-5rz"; */
+"L9X-Nd-5rz.placeholder" = "1:25";
+
+/* Class = "UINavigationItem"; title = "Recetario Susi"; ObjectID = "R3a-Uz-TZs"; */
+"R3a-Uz-TZs.title" = "Recetario Susi";
+
+/* Class = "UITextField"; placeholder = "Cucharita"; ObjectID = "UXD-0l-Juj"; */
+"UXD-0l-Juj.placeholder" = "Cucharita";
+
+/* Class = "UITextField"; placeholder = "12"; ObjectID = "Wy2-oW-x12"; */
+"Wy2-oW-x12.placeholder" = "12";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "dP5-sz-H7w"; */
+"dP5-sz-H7w.title" = " ";
+
+/* Class = "UITextField"; placeholder = "1"; ObjectID = "hH3-nN-Szl"; */
+"hH3-nN-Szl.placeholder" = "1";
+
+/* Class = "UITextField"; placeholder = "nombre del platillo"; ObjectID = "lMr-oL-Hkf"; */
+"lMr-oL-Hkf.placeholder" = "nombre del platillo";
+
+/* Class = "UILabel"; text = "personas"; ObjectID = "nXl-As-8if"; */
+"nXl-As-8if.text" = "personas";
+
+/* Class = "UITextField"; placeholder = "Champiñones"; ObjectID = "oHW-yb-1cQ"; */
+"oHW-yb-1cQ.placeholder" = "Champiñones";
+
+/* Class = "UILabel"; text = "Chef"; ObjectID = "rLP-Vq-fyn"; */
+"rLP-Vq-fyn.text" = "Chef";
+
+/* Class = "UIViewController"; title = "Crear receta"; ObjectID = "svN-jg-y6U"; */
+"svN-jg-y6U.title" = "Crear receta";
+
+/* Class = "UITextField"; placeholder = "Nombre del chef"; ObjectID = "vtA-Aa-isz"; */
+"vtA-Aa-isz.placeholder" = "Nombre del chef";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ycQ-IP-TUM"; */
+"ycQ-IP-TUM.text" = "Label";
