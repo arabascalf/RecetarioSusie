@@ -21,6 +21,7 @@
 		0DA0DF9521BAE773004FBCAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0DF9321BAE773004FBCAD /* Main.storyboard */; };
 		0DA0DF9721BAE774004FBCAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0DF9621BAE774004FBCAD /* Assets.xcassets */; };
 		0DA0DF9A21BAE774004FBCAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0DF9821BAE774004FBCAD /* LaunchScreen.storyboard */; };
+		0DD2DC2621CC194500619A38 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2DC2521CC194500619A38 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		0DA0DF9621BAE774004FBCAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DA0DF9921BAE774004FBCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DA0DF9B21BAE774004FBCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DD2DC2521CC194500619A38 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		287EB735CBBE9B55EB31468D /* Pods-RecetarioSusie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetarioSusie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecetarioSusie/Pods-RecetarioSusie.debug.xcconfig"; sourceTree = "<group>"; };
 		2A436264EC571537B725F16A /* Pods-RecetarioSusie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetarioSusie.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecetarioSusie/Pods-RecetarioSusie.release.xcconfig"; sourceTree = "<group>"; };
 		60E547AEE77F487779E094CD /* Pods_RecetarioSusie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecetarioSusie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				0DA0DF9621BAE774004FBCAD /* Assets.xcassets */,
 				0DA0DF9821BAE774004FBCAD /* LaunchScreen.storyboard */,
 				0DA0DF9B21BAE774004FBCAD /* Info.plist */,
+				0DD2DC2521CC194500619A38 /* Helpers.swift */,
 			);
 			path = RecetarioSusie;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				0D7E901C21C6F95A00FBEBDC /* Ingredients.swift in Sources */,
 				0D7E901421C6D27500FBEBDC /* IngredientsCell.swift in Sources */,
 				0D7E900F21C6CADB00FBEBDC /* RootViewController.swift in Sources */,
+				0DD2DC2621CC194500619A38 /* Helpers.swift in Sources */,
 				0DA0DF9021BAE773004FBCAD /* AppDelegate.swift in Sources */,
 				0D7E901A21C6DE2D00FBEBDC /* RecipeCell.swift in Sources */,
 				0D7E901121C6CAE800FBEBDC /* RecipeViewController.swift in Sources */,

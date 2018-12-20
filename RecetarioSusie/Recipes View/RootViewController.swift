@@ -9,59 +9,72 @@
 import UIKit
 import SQLite3
 
-class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RootViewController: UIViewController {
     
+    // Pointer to access to the database
     var db: OpaquePointer?
-    @IBOutlet weak var tableView: UITableView!
-    var textFieldName: String = "brownies"
-    var textFieldChef: String = "Tatá"
+    
+    // Array to store all the recipes on the database and show them on screen
     var recipesList = [Recipe]()
-    var idsList: [Int] = []
-    var namesList: [String] = []
+    
+    // Variable to know if the user will create or edit
     var recipe_id: Int?
     
+    // TableView on screen to show the recipes on the database
+    @IBOutlet weak var tableView: UITableView!
+    
+    // First function to be called
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Directory where the database will be created
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent("RecipesDB.sqlite")
         
+        // Validation to open the database
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print("Error opening database")
         }
         
+        // Table Recipes is created
         if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Recipes (id INTEGER PRIMARY KEY AUTOINCREMENT, recipe_name TEXT, chef_name TEXT, services TEXT, notes TEXT, method TEXT)", nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("Error creating table: \(errmsg)")
         }
         
+        // Table Ingredients is created
+        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Ingredients (id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT, recipeId INTEGER, FOREIGN KEY(recipeId) REFERENCES Recipes(id))", nil, nil, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("Error creating table: \(errmsg)")
+        }
+        
+        // Inicialization of variable
         recipe_id = nil
+        
+        // Call to function to show all the recipes on the database
         readValues()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        readValues()
-    }
-    
+    // Function to get all recipes on the database
     func readValues(){
         
-        //first empty the list of heroes
+        // Empty the list of recipes
         recipesList.removeAll()
         
-        //this is our select query
+        // Select query
         let queryString = "SELECT * FROM Recipes"
         
-        //statement pointer
+        // Statement pointer
         var stmt:OpaquePointer?
         
-        //preparing the query
+        // Validation to prepare the query
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("Error preparing insert: \(errmsg)")
             return
         }
         
-        //traversing through all the records
+        // Traversing through all the records
         while(sqlite3_step(stmt) == SQLITE_ROW){
             let id = sqlite3_column_int(stmt, 0)
             let recipe_name = String(cString: sqlite3_column_text(stmt, 1))
@@ -70,73 +83,77 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             let notes = String(cString: sqlite3_column_text(stmt, 4))
             let method = String(cString: sqlite3_column_text(stmt, 5))
             
-            //adding values to list
+            // Adding values to list
             recipesList.append(Recipe(image: #imageLiteral(resourceName: "recipecard"), id: Int(id), name: String(recipe_name), chef: String(chef_name), services: Int(services), notes: String(notes), method: String(method)))
         }
         
+        // Show the recipes on screen
         self.tableView.reloadData()
     }
     
+    // Function to delete recipes
     func deleteRecipe(recipe: Recipe) {
+        
+        // Call to delete ingredients
+        deleteIngredients(recipe: recipe)
+        
+        // Delete query
         let queryString = "DELETE FROM Recipes WHERE id=?"
+        
+        // Statement pointer
         var stmt:OpaquePointer?
         
+        // Validation to prepare the query
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("Error preparing insert: \(errmsg)")
+            print("Error preparing delete: \(errmsg)")
             return
         }
         
+        // Validation to pass id as parameter
         if sqlite3_bind_int(stmt, 1, (Int32(recipe.id as Int))) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure binding id: \(errmsg)")
             return
         }
         
+        // Validation to execute the query
         if sqlite3_step(stmt) != SQLITE_DONE {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure deleting recipe: \(errmsg)")
             return
         }
-        
-        print("Recipe deleted successfully")
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipesList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell") as! RecipeCell
-        let recipe: Recipe
-        recipe = recipesList[indexPath.row]
-        cell.setImageView(image: recipe.image!)
-        cell.setRecipeName(nameText: recipe.name!)
-        cell.setRecipeChef(chefText: recipe.chef!)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    // Function to delete ingredients which have recipe.id as foreign key (Cascade delete)
+    func deleteIngredients(recipe: Recipe) {
         
-        if editingStyle == .delete {
-            let recipe: Recipe
-            recipe = recipesList[indexPath.row]
-            deleteRecipe(recipe: recipe)
-            
-            recipesList.remove(at: indexPath.row)
-            
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
+        // Delete query
+        let queryString = "DELETE FROM Ingredients WHERE recipeId=?"
+        
+        // Statement pointer
+        var stmt:OpaquePointer?
+        
+        // Validation to prepare the query
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("Error preparing delete: \(errmsg)")
+            return
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        recipe_id = indexPath.row
+        
+        // Validation to pass id as parameter
+        if sqlite3_bind_int(stmt, 1, (Int32(recipe.id as Int))) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("Failure binding id: \(errmsg)")
+            return
+        }
+        
+        // Validation to execute the query
+        if sqlite3_step(stmt) != SQLITE_DONE {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("Failure deleting ingredients: \(errmsg)")
+            return
+        }
     }
     
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

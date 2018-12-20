@@ -12,9 +12,4 @@ class IngredientsCell: UITableViewCell {
 
     @IBOutlet weak var ingredientDescriptionLabel: UILabel!
     
-    func setIngredientText(ingredients: Ingredients) {
-        
-        let ingredientString = "\(ingredients.amount ?? " ") \(ingredients.measurement ?? " ") \(ingredients.ingredient_name ?? " ")"
-        ingredientDescriptionLabel.text = ingredientString
-    }
 }

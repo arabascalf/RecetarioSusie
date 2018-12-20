@@ -122,10 +122,14 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="ingredientDescriptionLabel" destination="Kel-I1-uLb" id="akd-nv-lQi"/>
+                                                    <outlet property="ingredientDescriptionLabel" destination="Kel-I1-uLb" id="Gep-rF-qax"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="svN-jg-y6U" id="RES-Ly-pKU"/>
+                                            <outlet property="delegate" destination="svN-jg-y6U" id="6Os-99-p2I"/>
+                                        </connections>
                                     </tableView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="method" translatesAutoresizingMaskIntoConstraints="NO" id="9Pa-ro-CnU">
                                         <rect key="frame" x="20" y="599.33333333333337" width="40" height="40"/>
@@ -342,16 +346,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipecard" translatesAutoresizingMaskIntoConstraints="NO" id="qu2-GY-CKt">
-                                                    <rect key="frame" x="20.666666666666657" y="11" width="372.66666666666674" height="157.66666666666666"/>
+                                                    <rect key="frame" x="20.666666666666657" y="11.333333333333329" width="372.66666666666674" height="157.33333333333337"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="qu2-GY-CKt" secondAttribute="height" multiplier="187:79" id="vA3-iB-S64"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K3d-Bp-AOs">
-                                                    <rect key="frame" x="76.666666666666657" y="53.333333333333343" width="260.66666666666674" height="73"/>
+                                                    <rect key="frame" x="76.666666666666657" y="53.666666666666664" width="260.66666666666674" height="72.666666666666686"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ycQ-IP-TUM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="260.66666666666669" height="44.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="260.66666666666669" height="44.333333333333336"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="ycQ-IP-TUM" secondAttribute="height" multiplier="129:22" id="Z9z-mE-K7d"/>
                                                             </constraints>
@@ -360,7 +364,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chef" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLP-Vq-fyn">
-                                                            <rect key="frame" x="0.0" y="52.666666666666664" width="260.66666666666669" height="20.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="52.333333333333336" width="260.66666666666669" height="20.333333333333336"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="rLP-Vq-fyn" secondAttribute="height" multiplier="129:10" id="VbU-IE-a5F"/>
                                                             </constraints>

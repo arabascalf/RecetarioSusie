@@ -13,8 +13,9 @@ class RecipeViewController: UIViewController {
     
     var recipe_id: Int? = nil
     var ingredientsList = [Ingredients]()
-    var ingredientToAdd = [Ingredients]()
-    let measurementArray = ["N/A", "Pizca", "Cucharadita", "Cucharada", "Taza", "Mililitros", "Gramos"]
+    var ingredientToAdd: [String] = []
+    let measurementArray = ["N/A", "Pizca(s)", "Cucharadita(s)", "Cucharada(s)", "Taza(s)", "Mililitro(s)", "Gramo(s)"]
+    var id = 0
     
     var db: OpaquePointer?
     @IBOutlet weak var tableView: UITableView!
@@ -29,7 +30,7 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var measurementTextField: UITextField!
     @IBOutlet weak var ingredientNameTextField: UITextField!
     
-    private var measurementPicker: UIPickerView!
+    var measurementPicker: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +43,6 @@ class RecipeViewController: UIViewController {
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print("Error opening database")
         }
-        
-        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Ingredients (id INTEGER PRIMARY KEY AUTOINCREMENT, amount TEXT, measurement TEXT, ingredient_name TEXT, recipeId INTEGER, FOREIGN KEY(recipeId) REFERENCES Recipes(id))", nil, nil, nil) != SQLITE_OK {
-            let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("Error creating table: \(errmsg)")
-        }
     }
     
     @IBAction func saveRecipe(_ sender: Any) {
@@ -54,7 +50,6 @@ class RecipeViewController: UIViewController {
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent("RecipesDB.sqlite")
         
-        // open database
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print("error opening database")
         }
@@ -86,36 +81,59 @@ class RecipeViewController: UIViewController {
         methodTextView.text = ""
         
         print("Recipe saved successfully")
+        insertIngredients()
+    }
+    
+    func insertIngredients(){
+        
+        getLastId()
+        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Ingredients (id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT, FOREIGN KEY(recipeId) REFERENCES Recipes(id))", nil, nil, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("Error creating table: \(errmsg)")
+        }
+        
+        let queryString = "INSERT INTO Ingredients (description, recipeId) VALUES ("
+        
+        for ingredient in ingredientToAdd {
+            let queryStringComplete = "\(queryString) \"\(ingredient)\", \(id));"
+            
+            print(queryStringComplete)
+            
+            if sqlite3_exec(db, queryStringComplete, nil, nil, nil) != SQLITE_OK {
+                let errmsg = String(cString: sqlite3_errmsg(db)!)
+                print("Error insert ingredient value into table: \(errmsg)")
+            }
+        }
+        
+        print("Ingredient saved successfully")
+    }
+    
+    func getLastId() {
+        
+        let queryString = "SELECT id FROM Recipes ORDER BY id DESC LIMIT 1"
+        var stmt:OpaquePointer?
+        
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("Error preparing insert: \(errmsg)")
+            return
+        }
+        
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+            id = Int(sqlite3_column_int(stmt, 0))
+        }
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
+        ingredientToAdd.append("\(amountTextField.text ?? " ") \(measurementTextField.text ?? " ") \(ingredientNameTextField.text ?? " ")")
         
-    }
-}
-
-
-extension RecipeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func customMeasurementPicker() {
-        measurementPicker = UIPickerView()
-        measurementTypes.inputView = measurementPicker
-        measurementPicker.delegate = self
-        measurementPicker.dataSource = self
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return measurementArray[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return measurementArray.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        measurementTypes.text = measurementArray[row]
+        let indexPath = IndexPath(row: ingredientToAdd.count - 1, section: 0)
+        tableView.beginUpdates()
+        tableView.insertRows(at: [indexPath], with: .automatic)
+        tableView.endUpdates()
+        
+        amountTextField.text = ""
+        measurementTextField.text = ""
+        ingredientNameTextField.text = ""
     }
 }
